@@ -11,13 +11,6 @@ def display_board(board):
         print(" | ".join(row))
         print("---+---+---")
 
-def save_game_state(board, player_turn):
-    with open("game_state.txt", "w") as file:
-        for row in board:
-            file.write(",".join(row) + "\n")
-        file.write(f"Player Turn: {player_turn}\n")
-    print("Game state saved!")
-
 def load_game_state():
     if not os.path.exists("game_state.txt"):
         return initialize_board(), 1
